@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MakeMyRecipe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+
+    <style>
+        body,
+        html {
+            height: 100%
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 150%;
+            font-family: "Amatic SC", sans-serif
+        }
+
+        letter-spacing: 5px;
+
+        .menu {
+            display: none
+        }
+
+        .bgimg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(".\background.jpg");
+            min-height: 90%;
+
+            .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <a href="#home" class="w3-bar-item w3-button">MakeMyRecipe</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <a href="#popular" class="w3-bar-item w3-button">Popular</a>
+                <a href="#contact" class="w3-bar-item w3-button">User</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+        <img class="w3-image" src=".\background.jpg" alt="Food Background" width="1600"
+            height="800">
+        <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+            <h1 class="w3-xxlarge"> Search From Image </h1>
+
+            <div class="container">
+                <div class="centered"></div>
+                <main>
+
+                    <div class="upload-section">
+                        <input type="file" id="imageUpload" accept="image/*">
+                        <button onclick="generateRecipe()">Generate Recipe</button>
+                    </div>
+                    <div id="recipeResult" class="result-section">
+                    </div>
+                </main>
+            </div>
+    </header>
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+
+         <!-- About Section -->
+        <div class="w3-row w3-padding-64" id="about">
+            <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="https://www.w3schools.com/w3images/tablesetting2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About</h1><br>
+            <h5 class="w3-center">Capture, Cook, Create!</h5>
+            <p class="w3-center">Recipe Generation from Food Images <br>
+                turns your food photos into <br>
+                personalized recipes.</p>
+            </p>
+            </div>
+        </div>
+        
+        <hr>
+        
+        
+        <!-- Popular Section -->
+        <!-- First Photo Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center" id="popular">
+            <div class="w3-row-padding w3-padding-16 w3-center"></div>
+            <h1 class="w3-center">Popular</h1><br>
+            <div class="w3-quarter">
+                <a href="https://www.hungryali.com/recipes/new-yorker-sandwiches"><img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Sandwich" style="width:100%"></a>
+                <h3>The Perfect Sandwich, A Real NYC Classic</h3>
+            </div>
+            <div class="w3-quarter">
+                <a href="https://www.recipetineats.com/how-to-cook-steak"><img src="https://www.w3schools.com/w3images/steak.jpg" alt="Steak" style="width:100%"></a>
+                <h3>Let Me Tell You About This Steak</h3>
+            </div>
+            <div class="w3-quarter">
+                <a href="https://www.allrecipes.com/recipe/72815/fresh-cherry-cobbler"><img src="https://www.w3schools.com/w3images/cherries.jpg" alt="Cherries" style="width:100%"></a>
+                <h3>Cherries, interrupted</h3>
+            </div>
+            <div class="w3-quarter">
+                <a href="https://www.inspiredtaste.net/56297/easy-sauteed-vegetables"><img src="https://www.w3schools.com/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%"></a>
+                <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+            </div>
+        </div>
+
+        <!-- Second Photo Grid-->
+        <div class="w3-row-padding w3-padding-16 w3-center">
+            <div class="w3-quarter">
+                <a href="https://www.liveeatlearn.com/how-to-make-homemade-popsicles"><img src="https://www.w3schools.com/w3images/popsicle.jpg" alt="Popsicle" style="width:100%"></a>
+                <h3>All I Need Is a Popsicle</h3>
+            </div>
+            <div class="w3-quarter">
+                <a href="https://www.recipetineats.com/honey-garlic-salmon-5-ingredients-15-minutes"><img src="https://www.w3schools.com/w3images/salmon.jpg" alt="Salmon" style="width:100%"></a>
+                <h3>Salmon For Your Skin</h3>
+            </div>
+            <div class="w3-quarter">
+                <a href="https://www.greatbritishchefs.com/recipes/mumbai-sandwich-recipe"><img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="Sandwich" style="width:100%"></a>
+                <h3>The Perfect Sandwich, A Real Classic</h3>
+            </div>
+            <div class="w3-quarter">
+                <a href="https://sallysbakingaddiction.com/homemade-croissants"><img src="https://www.w3schools.com/w3images/croissant.jpg" alt="Croissant" style="width:100%"></a>
+                <h3>Le French</h3>
+            </div>
+        </div>
+
+        <!-- End page content -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-32">
+        <p>MakeMyRecipe</p>
+    </footer>
+
+</body>
+
+</html>
